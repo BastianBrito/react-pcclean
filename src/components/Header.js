@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "../assets/images/logo.svg";
+import './Header.css'; // Importa el archivo CSS
 
 const Header = () => {
   return (
-    <header className="bg-dark py-2 fixed-top">
+    <header className="custom-header py-2 fixed-top">
       <nav className="navbar navbar-expand-lg navbar-dark container">
         <img
           src={logo}
@@ -42,6 +43,11 @@ const Header = () => {
             <li className="nav-item">
               <a className="nav-link text-light" href="#contact">
                 Contacto
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-light" href="#about-us">
+                About Us
               </a>
             </li>
           </ul>

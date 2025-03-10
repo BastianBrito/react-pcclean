@@ -4,7 +4,7 @@ import Welcome from "../components/Welcome";
 import ContactForm from "../components/ContactForm";
 import Services from "./Services";
 import Footer from "../components/Footer";
-
+import QuienesSomos from "../components/QuienesSomos";
 const Home = () => {
   const [initialMessage, setInitialMessage] = useState(
     " --Hola, me gustaría saber más sobre sus servicios. -- "
@@ -15,6 +15,9 @@ const Home = () => {
       <Header />
       <section id="welcome">
         <Welcome />
+      </section>
+      <section id="about-us">
+        <QuienesSomos />
       </section>
       <section id="services">
         <Services setInitialMessage={setInitialMessage} />
