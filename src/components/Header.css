@@ -1,0 +1,21 @@
+.custom-header {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    padding: 20px;
+    text-align: center;
+    font-size: 16px; /* Tamaño de letra más pequeño */
+    font-weight: bold;
+    color: #fff; /* Letras blancas */
+}
+
+.custom-header li {
+    color: #fff; /* Color de los links */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.custom-header li:hover {
+    color: #1e90ff; /* Color de los links al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    text-decoration: underline;
+}
