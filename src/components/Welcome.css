@@ -32,18 +32,24 @@
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
-
 .welcome-button {
-    background-color: #007bff;
+    background: linear-gradient(45deg, #007bff, #0056b3);
     color: white;
-    font-size: 1.2rem;
-    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 15px;
 }
 
 .welcome-button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(45deg, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+.welcome-button:active {
+    transform: scale(0.95);
 }
