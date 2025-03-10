@@ -12,11 +12,13 @@ const ContactForm = ({ initialMessage }) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para controlar el envío
 
   useEffect(() => {
     setFormData((prevData) => ({
       ...prevData,
-      message: initialMessage || "Quisiera más información sobre sus servicios.",
+      message:
+        initialMessage || "Quisiera más información sobre sus servicios.",
     }));
   }, [initialMessage]);
 
@@ -84,14 +86,18 @@ const ContactForm = ({ initialMessage }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
+      setIsSubmitting(true); // Inicia la animación de carga
       try {
-        const response = await fetch("https://serviceemailservice.azurewebsites.net/api/email/send", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "https://serviceemailservice.azurewebsites.net/api/email/send",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
 
         if (response.ok) {
           console.log("Formulario enviado:", formData);
@@ -103,6 +109,15 @@ const ContactForm = ({ initialMessage }) => {
         console.error("Error al enviar el formulario:", error);
         alert("Hubo un problema al enviar el mensaje.");
       }
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "+56-9",
+        message:
+          initialMessage || "Quisiera más información sobre sus servicios.",
+      });
+      setIsSubmitting(false); // Termina la animación de carga
     }
   };
 
@@ -118,9 +133,18 @@ const ContactForm = ({ initialMessage }) => {
 
   return (
     <section className="contact-section">
-      <h2 className="contact-title" data-aos="fade-left">📩 Contáctanos</h2>
-      <p className="contact-info" data-aos="fade-down">Envíanos tu cotización por medio de este formulario y nosotros de responderemos. ¡Las cotizaciones son gratis!</p>
-      <form className="contact-form" data-aos="fade-right" onSubmit={handleSubmit}>
+      <h2 className="contact-title" data-aos="fade-left">
+        📩 Contáctanos
+      </h2>
+      <p className="contact-info" data-aos="fade-down">
+        Envíanos tu cotización por medio de este formulario y nosotros de
+        responderemos. ¡Las cotizaciones son gratis!
+      </p>
+      <form
+        className="contact-form"
+        data-aos="fade-right"
+        onSubmit={handleSubmit}
+      >
         <div className="form-group">
           <label>👤 Nombre</label>
           <input
@@ -173,8 +197,12 @@ const ContactForm = ({ initialMessage }) => {
 
         {errors.general && <small className="error">{errors.general}</small>}
 
-        <button type="submit" className="contact-btn">
-          Enviar Mensaje 🚀
+        <button type="submit" className="contact-btn" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <div className="loading-spinner"></div>
+          ) : (
+            "Enviar Mensaje 🚀"
+          )}
         </button>
       </form>
     </section>
