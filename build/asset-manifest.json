@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-pcclean/static/css/main.d52efa08.css",
+    "main.js": "/react-pcclean/static/js/main.686e1c81.js",
+    "static/js/453.a37e0a17.chunk.js": "/react-pcclean/static/js/453.a37e0a17.chunk.js",
+    "static/media/fondo1.svg": "/react-pcclean/static/media/fondo1.6803c11f3153c4164c09f646c60188fc.svg",
+    "static/media/fan.svg": "/react-pcclean/static/media/fan.5ee8fa37c3b3d4e7600448096e270610.svg",
+    "static/media/logo.svg": "/react-pcclean/static/media/logo.fa86c3fb3c04f5c4a11c5d3002879ab6.svg",
+    "static/media/GPU.svg": "/react-pcclean/static/media/GPU.fa3555ea4b019851259e5ef503e5b4f7.svg",
+    "static/media/Cpu.svg": "/react-pcclean/static/media/Cpu.7c3a75f3e1e9e399f282159779e43f67.svg",
+    "index.html": "/react-pcclean/index.html",
+    "main.d52efa08.css.map": "/react-pcclean/static/css/main.d52efa08.css.map",
+    "main.686e1c81.js.map": "/react-pcclean/static/js/main.686e1c81.js.map",
+    "453.a37e0a17.chunk.js.map": "/react-pcclean/static/js/453.a37e0a17.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d52efa08.css",
+    "static/js/main.686e1c81.js"
+  ]
+}
