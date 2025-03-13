@@ -1,21 +1,93 @@
+/* Estilo general del header con fondo semi-transparente y posición fija */
 .custom-header {
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    background: rgba(0, 0, 0, 0.5); /* Negro con 50% de transparencia */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para mejor visibilidad */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Agrega margen superior al contenido para que no quede oculto detrás del navbar */
+body {
+    padding-top: 70px; /* Ajuste según el tamaño del navbar */
+}
+
+/* Ajustes generales de la barra de navegación */
+.navbar {
+    padding: 10px 20px;
+}
+
+/* Logo */
+.navbar-brand img {
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Menú principal */
+.navbar-nav {
     text-align: center;
-    font-size: 16px; /* Tamaño de letra más pequeño */
-    font-weight: bold;
-    color: #fff; /* Letras blancas */
 }
 
-.custom-header li {
-    color: #fff; /* Color de los links */
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+/* Estilo de los enlaces */
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
 }
 
-.custom-header li:hover {
-    color: #1e90ff; /* Color de los links al pasar el mouse */
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-    text-decoration: underline;
+.navbar-nav .nav-link:hover {
+    color: #1e90ff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Menú desplegable en móviles con fondo semi-transparente */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.7); /* Más opaco para mejor visibilidad */
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 15px;
+        font-size: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
 }

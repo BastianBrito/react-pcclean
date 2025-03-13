@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
+import React from "react";
 import "aos/dist/aos.css";
 import "./ServiceCard.css";
 
@@ -22,16 +21,6 @@ const ServiceCard = ({
     const selectedValue = parseInt(event.target.value, 10);
     onSelectChange(title, selectedValue);
   };
-
-  useEffect(() => {
-    AOS.init({
-      once: false,
-      // disable: "phone",
-      duration: 1000,
-      easing: "ease-out-cubic",
-      mirror: true,
-    });
-  }, []);
 
   return (
     <div className="service-card" data-aos="flip-right">

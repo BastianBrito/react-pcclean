@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ServiceCard from "../components/ServiceCard";
 import cpuIcon from "../assets/images/Cpu.svg";
 import gpuIcon from "../assets/images/GPU.svg";
 import fanIcon from "../assets/images/fan.svg";
 import "./Services.css";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 const services = [
@@ -91,16 +90,6 @@ const Services = ({ setInitialMessage }) => {
     setInitialMessage(message);
     setShowConfirmationMessage(true);
   };
-
-    useEffect(() => {
-      AOS.init({
-        once: true,
-        // disable: "phone",
-        duration: 1000,
-        easing: "ease-out-cubic",
-        mirror: true,
-      });
-    }, []);
 
   return (
     <section id="servicios" className="container py-5">

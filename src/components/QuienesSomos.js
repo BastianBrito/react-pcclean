@@ -1,20 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './QuienesSomos.css';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const QuienesSomos = () => {
-
-    useEffect(() => {
-          AOS.init({
-            once: false,
-            // disable: "phone",
-            duration: 2000,
-            easing: "ease-in-out-back",
-            mirror: false,
-            anchorPlacement: 'top-bottom'
-          });
-        }, []);
 
     return (
         <div className="quienes-somos-container" data-aos="fade">

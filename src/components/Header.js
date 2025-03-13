@@ -1,17 +1,14 @@
 import React from "react";
 import logo from "../assets/images/logo.svg";
-import './Header.css'; // Importa el archivo CSS
+import "./Header.css"; // Importa el archivo CSS
 
 const Header = () => {
   return (
-    <header className="custom-header py-2 fixed-top">
-      <nav className="navbar navbar-expand-lg navbar-dark container">
-        <img
-          src={logo}
-          alt="PC Clean"
-          className="logo"
-          style={{ height: "40px" }}
-        />
+    <header className="custom-header sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-dark container-fluid">
+        <a className="navbar-brand" href="#welcome">
+          <img src={logo} alt="PC Clean" style={{ height: "40px" }} />
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,28 +23,23 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link text-light" href="#welcome">
+              <a className="nav-link" href="#welcome">
                 Inicio
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#services">
+              <a className="nav-link" href="#services">
                 Servicios
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#reviews">
-                Reseñas
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-light" href="#contact">
+              <a className="nav-link" href="#contact">
                 Contacto
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#about-us">
-                About Us
+              <a className="nav-link" href="#about-us">
+                Quiénes somos
               </a>
             </li>
           </ul>

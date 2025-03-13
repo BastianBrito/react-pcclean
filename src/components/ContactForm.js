@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./ContactForm.css";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ContactForm = ({ initialMessage }) => {
@@ -15,7 +14,7 @@ const ContactForm = ({ initialMessage }) => {
   const [isSubmitting, setIsSubmitting] = useState(false); // Estado para controlar el envío
 
   useEffect(() => {
-    setFormData((prevData) => ({
+   setFormData((prevData) => ({
       ...prevData,
       message:
         initialMessage || "Quisiera más información sobre sus servicios.",
@@ -120,16 +119,6 @@ const ContactForm = ({ initialMessage }) => {
       setIsSubmitting(false); // Termina la animación de carga
     }
   };
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      // disable: "phone",
-      duration: 1000,
-      easing: "ease-out-cubic",
-      mirror: true,
-    });
-  }, []);
 
   return (
     <section className="contact-section">
